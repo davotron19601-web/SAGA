@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prototipo</title>
+</head>
+<body>
+  <h1>Estudiantes</h1>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Carrera</th>
+      </tr>
+    </thead>
+    <tbody id="cuerpo-tabla">
+    </tbody>
+  </table>
+
+  <script>
+    async function cargar() {
+      const respuesta = await fetch("http://127.0.0.1:8000/estudiantes");
+      const datos = await respuesta.json();
+      console.log(datos);
+
+      const cuerpo = document.getElementById("cuerpo-tabla");
+for (const estudiante of datos) {
+  const fila = document.createElement("tr");
+
+  const celdaNombre = document.createElement("td");
+  celdaNombre.textContent = estudiante.nombre;
+  fila.appendChild(celdaNombre);
+  const celdaEmail = document.createElement("td");
+  celdaEmail.textContent = estudiante.email;
+  fila.appendChild(celdaEmail);
+  const celdaCarrera = document.createElement("td");
+  celdaCarrera.textContent = estudiante.carrera;
+  fila.appendChild(celdaCarrera);
+  cuerpo.appendChild(fila);
+}
+    }
+
+    cargar();
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ana Martínez",
+    "email": "ana.martinez@example.com",
+    "carrera": "Ingeniería de Sistemas"
+  },
+  {
+    "id": 2,
+    "nombre": "Carlos Pérez",
+    "email": "carlos.perez@example.com",
+    "carrera": "Administración de Empresas"
+  },
+  {
+    "id": 3,
+    "nombre": "Lucía Fernández",
+    "email": "lucia.fernandez@example.com",
+    "carrera": "Diseño Gráfico"
+  }
+]
